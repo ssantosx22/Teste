@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <process_name_or_id>"
+    exit 1
+fi
+
+PROCESS=$1
+
+while true; do
+    ps -p $PROCESS -o %cpu,%mem --no-headers
+    sleep 5
+done
